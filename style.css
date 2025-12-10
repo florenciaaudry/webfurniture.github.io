@@ -1201,7 +1201,26 @@ img {
     justify-content: flex-start;
   }
 
-  .drawer .panel {
-    width: 100%;
-  }
+
+.product-card .fav { /* default abu */
+}
+
+.product-card .fav[aria-pressed="true"] {
+  background: #fee2e2;
+  color: #b91c1c;           
+  border: 1px solid #fecaca;
+}
+
+.product-card .fav[aria-pressed="true"]:hover {
+  background: #fecaca;
+}
+
+.product-card .fav[aria-pressed="false"]:hover {
+  background: #f3f4f6;
+}
+
+.drawer .panel {
+    width: min(360px, 100%);
+}
+
 }
