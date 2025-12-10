@@ -63,7 +63,8 @@ img {
 
 /* HEADER */
 
-.site-header {
+.site-header,
+.topbar {
   position: sticky;
   top: 0;
   z-index: 50;
@@ -557,7 +558,8 @@ img {
 
 /* GRID & CARD PRODUK */
 
-.product-grid {
+.product-grid,
+.grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
@@ -1019,14 +1021,14 @@ img {
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
   }
 
   .about {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .product-grid {
+  .product-grid,
+  .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1048,24 +1050,40 @@ img {
     padding: 32px 0;
   }
 
+  /* HEADER MOBILE – brand kiri, actions kanan, menu di baris kedua */
   .nav {
-    flex-wrap: wrap;
     height: auto;
-    padding: 8px 0;
+    padding: 8px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap; /* biar menu bisa turun ke baris kedua */
   }
 
-  .nav-links {
-    width: 100%;
-    justify-content: center;
-    order: 3;
-    flex-wrap: wrap;
-    gap: 10px;
+  .brand {
+    flex: 1 1 auto;
+    justify-content: flex-start;
   }
 
   .nav-actions {
-    order: 2;
+    flex: 0 0 auto;
+    order: 1;
+    display: flex;
+    gap: 8px;
   }
 
+  .nav-links {
+    order: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 2px;
+  }
+
+  /* HERO */
   .hero {
     gap: 20px;
   }
@@ -1109,7 +1127,9 @@ img {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .product-grid {
+  /* GRID PRODUK */
+  .product-grid,
+  .grid {
     grid-template-columns: minmax(0, 1fr);
     padding: 10px 10px 8px;
     border-radius: 18px;
@@ -1139,10 +1159,6 @@ img {
 
   .chips {
     justify-content: flex-start;
-  }
-
-  .btn {
-    width: auto;
   }
 
   .drawer .panel {
